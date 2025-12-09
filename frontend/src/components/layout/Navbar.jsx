@@ -13,7 +13,7 @@ export default function Navbar() {
         </div>
 
         {/* CENTER — Menu */}
-        <div className="flex flex-auto justify-center text-[14px] md:text-[16px] gap-[30px] md:gap-[60px]  text-gray-800">
+        <div className="flex flex-auto justify-center text-[14px] md:text-[16px] gap-[30px] md:gap-[60px]  text-gray-800 font-semibold">
           <span className="cursor-pointer hover:text-black">Home</span>
           <span className="cursor-pointer hover:text-black">Recipes</span>
           <span className="cursor-pointer hover:text-black">Blog</span>
