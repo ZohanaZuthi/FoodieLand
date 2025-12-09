@@ -1,7 +1,7 @@
 export default function HeroFeaturedRecipe() {
   return (
     <section className="bg-blue-50 rounded-3xl p-10 flex flex-col md:flex-row items-center gap-10">
-      {/* LEFT SIDE */}
+     
       <div className="flex-1 space-y-4">
         <p className="text-blue-600 font-semibold text-sm">Hot Recipes</p>
 
@@ -23,7 +23,7 @@ export default function HeroFeaturedRecipe() {
         </div>
       </div>
 
-      {/* RIGHT SIDE → Image Placeholder */}
+      
       <div className="flex-1">
         <div className="w-full h-64 bg-gray-300 rounded-2xl animate-pulse"></div>
       </div>

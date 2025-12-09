@@ -31,4 +31,21 @@
     font-weight: 400;
     font-style: normal;
 }
+/* hide scrollbar for modern browsers */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
 
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+/* hide scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}

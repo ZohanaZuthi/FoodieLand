@@ -5,14 +5,14 @@ export default function Navbar() {
     <nav className="w-150% bg-white border-b border-gray-300 px-0">
       <div className="max-w-6xl mx-auto px-6 pt-4 pb-1 flex items-end ">
 
-        {/* LEFT — Logo */}
+       
         <div className="flex flex-1  text-[16px] md:text-[24px]">
           <h1 style={{fontFamily:"Lobster"}}className="text-3xl">
             Foodieland<span className="text-red-500">.</span>
           </h1>
         </div>
 
-        {/* CENTER — Menu */}
+       
         <div className="flex flex-auto justify-center text-[14px] md:text-[16px] gap-[30px] md:gap-[60px]  text-gray-800 font-semibold">
           <span className="cursor-pointer hover:text-black">Home</span>
           <span className="cursor-pointer hover:text-black">Recipes</span>
@@ -21,7 +21,7 @@ export default function Navbar() {
           <span className="cursor-pointer hover:text-black">About us</span>
         </div>
 
-        {/* RIGHT — Social Icons */}
+        
         <div className="hidden md:flex flex-auto justify-end gap-6 text-xl text-gray-800 ">
           <FaFacebookF className="cursor-pointer hover:text-black" />
           <FaTwitter className="cursor-pointer hover:text-black" />
