@@ -1,15 +1,10 @@
 import { Routes, Route } from "react-router-dom";
-import MainLayout from "./layouts/MainLayout.jsx";
-// import HomePage from "./pages/Home/HomePage.jsx";
+import HomePage from "./pages/Home/HomePage.jsx";
 
-function App() {
+export default function App() {
   return (
     <Routes>
-      <Route element={<MainLayout />}>
-        {/* <Route path="/" element={<HomePage />} /> */}
-      </Route>
+      <Route path="/" element={<HomePage />} />
     </Routes>
   );
 }
-
-export default App;
