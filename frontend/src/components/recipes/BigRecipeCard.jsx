@@ -6,17 +6,17 @@ import badge from '../../assets/img/Badge.png';
 export default function BigRecipeCard({ recipe }) {
   return (
  
-    <div className="flex-auto
+    <div className="relative flex-auto
     min-w-[90%] md:min-w-[700px] lg:min-w-[1100px] xl:min-w-[1280px]
     h-[400px] md:h-[500px] lg:h-[580px] xl:h-[640px]
-   rounded-3xl shadow-md overflow-hidden flex bg-[#E7FAFE]">
-    <div className='absolute left-1/2 top-1/4 -translate-x-1/2'>
-       <img src={badge} alt="badge" className="w-20 h-20"/>
+   rounded-3xl shadow-md overflow-hidden flex bg-[#E7FAFE] top-[150]">
+    <div className='absolute left-1/2 -translate-x-1/2 top-8 md:top-10 lg:top-12 z-10'>
+       <img src={badge} alt="badge" className="w-24 h-24 md:w-40 md:h-36"/>
 
     </div>
   
      <div className='w-full flex h-full'>
-      <div className="w-1/2 h-full p-3 md:p-10 flex flex-col justify-center space-y-6">
+      <div className="w-1/2 h-full py-3 md:py-10 pr-3 md:pr-10 pl-3 md:pl-8 flex flex-col justify-center space-y-6">
    
       
 
