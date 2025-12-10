@@ -2,11 +2,11 @@ import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 import { HiMenu } from "react-icons/hi"; 
 export default function Navbar() {
   return (
-    <nav className="w-150% bg-white border-b border-gray-300 px-0">
-      <div className="max-w-6xl mx-auto px-6 pt-4 pb-1 flex items-end ">
+    <nav className="max-w-[1440px] bg-white border-b border-gray-300 px-0">
+      <div className="max-w-[1280px] mx-auto px-6 pt-4 pb-1 flex items-end ">
 
        
-        <div className="flex flex-1  text-[16px] md:text-[24px]">
+        <div className="flex flex-1 justify-start text-[16px] md:text-[24px]">
           <h1 style={{fontFamily:"Lobster"}}className="text-3xl">
             Foodieland<span className="text-red-500">.</span>
           </h1>
