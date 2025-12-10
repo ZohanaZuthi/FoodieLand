@@ -50,7 +50,7 @@ export default function HomePage() {
       <BigRecipeSlider className="w-full" recipes={bigRecipes} />
     </div>
       <CategorySection />
-      {/* Now the slider is rendered properly */}
+      
       <div className="text-center text-4xl font-semibold p-6">
   Simple and tasty recipes
 </div>
