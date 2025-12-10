@@ -1,6 +1,6 @@
 import RecipeSlider from "../../components/recipes/RecipeSlider";
 import BigRecipeSlider from "../../components/recipes/BigRecipeSlider";
-
+import CategorySection from "../../components/categories/CategorySection";
 const bigRecipes = [
   {
     id: 1,
@@ -49,7 +49,7 @@ export default function HomePage() {
        <div>
       <BigRecipeSlider className="w-full" recipes={bigRecipes} />
     </div>
-
+      <CategorySection />
       {/* Now the slider is rendered properly */}
       <RecipeSlider recipes={bigRecipes} title="Simple & Tasty Recipes" />
     </div>
