@@ -5,13 +5,17 @@ import box from '../../assets/img/image 14.png';
 import badge from '../../assets/img/Badge.png';
 export default function BigRecipeCard({ recipe }) {
   return (
+ 
     <div className="flex-auto
     min-w-[90%] md:min-w-[700px] lg:min-w-[1100px] xl:min-w-[1280px]
     h-[400px] md:h-[500px] lg:h-[580px] xl:h-[640px]
    rounded-3xl shadow-md overflow-hidden flex bg-[#E7FAFE]">
+    <div className='absolute left-1/2 top-1/4 -translate-x-1/2'>
+       <img src={badge} alt="badge" className="w-20 h-20"/>
 
+    </div>
   
-     
+     <div className='w-full flex h-full'>
       <div className="w-1/2 h-full p-3 md:p-10 flex flex-col justify-center space-y-6">
    
       
@@ -76,7 +80,7 @@ export default function BigRecipeCard({ recipe }) {
           className="w-full h-full object-cover"
         />
       </div>
-
+     </div>
     </div>
   );
 }
