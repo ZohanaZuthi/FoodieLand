@@ -1,6 +1,6 @@
-import RecipeSlider from "../../components/recipes/RecipeSlider";
+import RecipeCard from "../../components/recipes/RecipeCard";
 import BigRecipeSlider from "../../components/recipes/BigRecipeSlider";
-import CategorySection from "../../components/categories/CategorySection";
+import CategorySection from "../../components/categories/CategorySection.jsx";
 const bigRecipes = [
   {
     id: 1,
@@ -51,7 +51,16 @@ export default function HomePage() {
     </div>
       <CategorySection />
       {/* Now the slider is rendered properly */}
-      <RecipeSlider recipes={bigRecipes} title="Simple & Tasty Recipes" />
+      <div className="text-center text-4xl font-semibold p-6">
+  Simple and tasty recipes
+</div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {bigRecipes.map((recipe) => (
+    <RecipeCard key={recipe.id} recipe={recipe} />
+  ))}
+</div>
+
     </div>
   );
 }
