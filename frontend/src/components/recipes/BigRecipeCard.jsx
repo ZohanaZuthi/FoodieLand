@@ -9,7 +9,7 @@ export default function BigRecipeCard({ recipe }) {
     <div className="relative flex-auto
     min-w-[90%] md:min-w-[700px] lg:min-w-[1100px] xl:min-w-[1280px]
     h-[400px] md:h-[500px] lg:h-[580px] xl:h-[640px]
-   rounded-3xl shadow-md overflow-hidden flex bg-[#E7FAFE] top-[150]">
+   rounded-3xl overflow-hidden flex bg-[#E7FAFE] top-[150]">
     <div className='absolute left-1/2 -translate-x-1/2 top-8 md:top-10 lg:top-12 z-10'>
        <img src={badge} alt="badge" className="w-24 h-24 md:w-40 md:h-36"/>
 

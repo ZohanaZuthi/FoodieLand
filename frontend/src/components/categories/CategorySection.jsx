@@ -9,27 +9,27 @@ export default function CategorySection() {
     },
     {
       name: "Vegan",
-      image: "src/assets/img/image 20.png",
+      image: "src/assets/img/image 21.png",
       gradient: "linear-gradient(135deg, #E9F8EC 0%, #FFFFFF 100%)",
     },
     {
       name: "Meat",
-      image: "src/assets/img/image 20.png",
+      image: "src/assets/img/image 22.png",
       gradient: "linear-gradient(135deg, #FEECEC 0%, #FFFFFF 100%)",
     },
     {
       name: "Dessert",
-      image: "src/assets/img/image 20.png",
+      image: "src/assets/img/image 23.png",
       gradient: "linear-gradient(135deg, #FFF3E7 0%, #FFFFFF 100%)",
     },
     {
       name: "Lunch",
-      image: "src/assets/img/image 20.png",
+      image: "src/assets/img/image 24.png",
       gradient: "linear-gradient(135deg, #F6F6F6 0%, #FFFFFF 100%)",
     },
     {
       name: "Chocolate",
-      image: "src/assets/img/image 20.png",
+      image: "src/assets/img/image 25.png",
       gradient: "linear-gradient(135deg, #FFEBEB 0%, #FFFFFF 100%)",
     },
   ];

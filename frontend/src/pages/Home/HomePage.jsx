@@ -2,6 +2,16 @@ import RecipeCard from "../../components/recipes/RecipeCard";
 import BigRecipeSlider from "../../components/recipes/BigRecipeSlider";
 import CategorySection from "../../components/categories/CategorySection.jsx";
 import human from "../../assets/img/Group 880.png";
+import InstagramFeedSection from "../../components/instagram/InstagramFeedSection";
+import NewsletterSection from "../../components/layout/NewsletterSection";
+
+import insta1 from "../../assets/img/insta1.png";
+import insta2 from "../../assets/img/insta2.png";
+import insta3 from "../../assets/img/insta3.png";
+import insta4 from "../../assets/img/insta4.png";
+import pro from "../../assets/img/Oval.png";
+
+
 const bigRecipes = [
   {
     id: 1,
@@ -43,6 +53,56 @@ const bigRecipes = [
     }
   }
 ];
+const instaPosts = [
+  {
+    id: 1,
+    username: "Foodieland.",
+    profilePic: [pro],
+    location: "Tokyo, Japan",
+    image: [insta1],
+    likes: "44,686",
+    caption: "The vegetable dishes need to have certain vitamin for those people",
+    date: "September 19",
+    currentSlide: 1,
+    totalSlides: 3,
+  },
+  {
+    id: 2,
+    username: "Foodieland.",
+    profilePic: [pro],
+    location: "Tokyo, Japan",
+    image: [insta2],
+    likes: "20,233",
+    caption: "Sweet food can bring someone’s happiness as long as they don’t eat too much.",
+    date: "September 10",
+    currentSlide: 1,
+    totalSlides: 1,
+  },
+  {
+    id: 3,
+    username: "Foodieland.",
+    profilePic: [pro],
+    location: "Tokyo, Japan",
+    image: [insta3],
+    likes: "32,887",
+    caption: "What are you doing before start cooking? Preparing the tools or ingredients?",
+    date: "September 8",
+    currentSlide: 1,
+    totalSlides: 3,
+  },
+  {
+    id: 4,
+    username: "Foodieland.",
+    profilePic: [pro],
+    location: "Tokyo, Japan",
+    image:[insta4],
+    likes: "48,001",
+    caption: "Shabu-shabu, are you suitable for you who want to romantic dinner.",
+    date: "September 7",
+    currentSlide: 1,
+    totalSlides: 2,
+  }
+];
 
 export default function HomePage() {
   return (
@@ -80,7 +140,7 @@ export default function HomePage() {
     </p>
 
     <div className="flex justify-start">
-      <button className="bg-black flex items-center gap-1 md:gap-2 text-white px-1 md:px-8 py-3 rounded-xl text-[10px] md:text-lg w-fit whitespace-nowrap">
+      <button className="bg-black flex items-center gap-1 md:gap-2 text-white px-3 md:px-8 py-3 rounded-xl text-[14px] md:text-lg w-fit whitespace-nowrap">
         Learn More
       </button>
     </div>
@@ -94,6 +154,13 @@ export default function HomePage() {
 </div>
 
     </div>
+<div className="mt-[143px]">
+<InstagramFeedSection posts={instaPosts} />
+</div>
+<div className="mt-[143px]">
+  <NewsletterSection />
+
+</div>
 
     </div>
   );
