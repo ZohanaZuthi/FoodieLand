@@ -42,6 +42,7 @@ class Recipe(models.Model):
 
     def __str__(self):
         return self.title
+
 class Nutrition(models.Model):
     recipe = models.OneToOneField(
         Recipe,
@@ -57,3 +58,23 @@ class Nutrition(models.Model):
 
     def __str__(self):
         return f"Nutrition for {self.recipe.title}"
+class IngredientGroup(models.Model):
+    recipe = models.ForeignKey(
+        Recipe,
+        on_delete=models.CASCADE,
+        related_name="ingredient_groups"
+    )
+    group_name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"{self.group_name} ({self.recipe.title})"
+class Ingredient(models.Model):
+    group = models.ForeignKey(
+        IngredientGroup,
+        on_delete=models.CASCADE,
+        related_name="items"
+    )
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
