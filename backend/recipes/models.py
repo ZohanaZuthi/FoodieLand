@@ -78,3 +78,18 @@ class Ingredient(models.Model):
 
     def __str__(self):
         return self.name
+class Instruction(models.Model):
+    recipe = models.ForeignKey(
+        Recipe,
+        on_delete=models.CASCADE,
+        related_name="instructions"
+    )
+    step_number = models.PositiveIntegerField()
+    text = models.TextField()
+    image = models.ImageField(upload_to="instructions/", blank=True, null=True)
+
+    class Meta:
+        ordering = ["step_number"]
+
+    def __str__(self):
+        return f"Step {self.step_number} for {self.recipe.title}"
