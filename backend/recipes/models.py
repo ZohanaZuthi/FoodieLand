@@ -1,10 +1,12 @@
 from django.db import models
 
 class Category(models.Model):
-    name=models.CharField(max_length=100,unique=True)
-    icon=models.ImageField(upload_to="category-icons/",blank=True,null=True)
+    name = models.CharField(max_length=100, unique=True)
+    icon = models.ImageField(upload_to="category-icons/", blank=True, null=True)
+
     def __str__(self):
         return self.name
+
 
 class Author(models.Model):
     name = models.CharField(max_length=100)
@@ -14,15 +16,15 @@ class Author(models.Model):
     def __str__(self):
         return self.name
 
+
 class Recipe(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(unique=True, blank=True)
-    
+
     author = models.ForeignKey(Author, on_delete=models.SET_NULL, null=True, related_name="recipes")
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True, related_name="recipes")
 
     description = models.TextField()
-
     prep_time = models.CharField(max_length=50)
     cook_time = models.CharField(max_length=50)
     servings = models.CharField(max_length=50, blank=True, null=True)
@@ -43,13 +45,9 @@ class Recipe(models.Model):
     def __str__(self):
         return self.title
 
-class Nutrition(models.Model):
-    recipe = models.OneToOneField(
-        Recipe,
-        on_delete=models.CASCADE,
-        related_name="nutrition"
-    )
 
+class Nutrition(models.Model):
+    recipe = models.OneToOneField(Recipe, on_delete=models.CASCADE, related_name="nutrition")
     calories = models.CharField(max_length=50)
     total_fat = models.CharField(max_length=50)
     protein = models.CharField(max_length=50)
@@ -58,32 +56,26 @@ class Nutrition(models.Model):
 
     def __str__(self):
         return f"Nutrition for {self.recipe.title}"
+
+
 class IngredientGroup(models.Model):
-    recipe = models.ForeignKey(
-        Recipe,
-        on_delete=models.CASCADE,
-        related_name="ingredient_groups"
-    )
+    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name="ingredient_groups")
     group_name = models.CharField(max_length=100)
 
     def __str__(self):
         return f"{self.group_name} ({self.recipe.title})"
+
+
 class Ingredient(models.Model):
-    group = models.ForeignKey(
-        IngredientGroup,
-        on_delete=models.CASCADE,
-        related_name="items"
-    )
+    group = models.ForeignKey(IngredientGroup, on_delete=models.CASCADE, related_name="items")
     name = models.CharField(max_length=255)
 
     def __str__(self):
         return self.name
+
+
 class Instruction(models.Model):
-    recipe = models.ForeignKey(
-        Recipe,
-        on_delete=models.CASCADE,
-        related_name="instructions"
-    )
+    recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE, related_name="instructions")
     step_number = models.PositiveIntegerField()
     text = models.TextField()
     image = models.ImageField(upload_to="instructions/", blank=True, null=True)
@@ -93,3 +85,29 @@ class Instruction(models.Model):
 
     def __str__(self):
         return f"Step {self.step_number} for {self.recipe.title}"
+
+
+class Subscription(models.Model):
+    email = models.EmailField(unique=True)
+    
+
+    def __str__(self):
+        return self.email
+
+
+class ContactMessage(models.Model):
+    ENQUIRY_TYPES = (
+        ("Advertising", "Advertising"),
+        ("Recipe Support", "Recipe Support"),
+        ("General Question", "General Question"),
+    )
+
+    name = models.CharField(max_length=200)
+    email = models.EmailField()
+    subject = models.CharField(max_length=255)
+    enquiry_type = models.CharField(max_length=50, choices=ENQUIRY_TYPES)
+    message = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} - {self.subject}"

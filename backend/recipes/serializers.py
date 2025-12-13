@@ -1,4 +1,6 @@
 from rest_framework import serializers
+from .models import Subscription
+from .models import ContactMessage
 from .models import (
     Category, Author, Recipe, Nutrition,
     IngredientGroup, Ingredient, Instruction
@@ -59,6 +61,16 @@ class RecipeSerializer(serializers.ModelSerializer):
         model = Recipe
         fields = "__all__"
 
+class SubscriptionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Subscription
+        fields = ["id", "email"]
+    
+class SubscriptionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Subscription
+        fields = "__all__"
+
   
     def create(self, validated_data):
         nutrition_data = validated_data.pop("nutrition")
@@ -106,3 +118,7 @@ class RecipeSerializer(serializers.ModelSerializer):
             Instruction.objects.create(recipe=instance, **step)
 
         return instance
+class ContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ContactMessage
+        fields = "__all__"

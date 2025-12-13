@@ -5,7 +5,11 @@ from rest_framework.generics import (
 
 from .models import Recipe, Category
 from .serializers import RecipeSerializer, CategorySerializer
-
+from rest_framework.generics import CreateAPIView
+from .models import ContactMessage
+from .serializers import ContactSerializer
+from .models import Subscription
+from .serializers import SubscriptionSerializer
 
 
 class RecipeListAPI(ListAPIView):
@@ -40,3 +44,10 @@ class RecipeUpdateAPI(UpdateAPIView):
 class RecipeDeleteAPI(DestroyAPIView):
     queryset = Recipe.objects.all()
     lookup_field = "slug"
+class ContactCreateAPI(CreateAPIView):
+    queryset = ContactMessage.objects.all()
+    serializer_class = ContactSerializer
+
+class SubscriptionCreateAPI(CreateAPIView):
+    queryset = Subscription.objects.all()
+    serializer_class = SubscriptionSerializer
