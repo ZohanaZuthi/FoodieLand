@@ -30,27 +30,27 @@ export default function HeroSection({ recipe }) {
 
           <div className="flex justify-between">
             <span className="text-gray-600">Calories</span>
-            <span className="font-semibold">{recipe.nutrition.calories}</span>
+            <span className="font-semibold">{recipe.nutrition?.calories}</span>
           </div>
 
           <div className="flex justify-between">
             <span className="text-gray-600">Total Fat</span>
-            <span className="font-semibold">{recipe.nutrition.totalFat}</span>
+            <span className="font-semibold">{recipe.nutrition?.total_fat}</span>
           </div>
 
           <div className="flex justify-between">
             <span className="text-gray-600">Protein</span>
-            <span className="font-semibold">{recipe.nutrition.protein}</span>
+            <span className="font-semibold">{recipe.nutrition?.protein}</span>
           </div>
 
           <div className="flex justify-between">
             <span className="text-gray-600">Carbohydrate</span>
-            <span className="font-semibold">{recipe.nutrition.carbs}</span>
+            <span className="font-semibold">{recipe.nutrition?.carbs}</span>
           </div>
 
           <div className="flex justify-between">
             <span className="text-gray-600">Cholesterol</span>
-            <span className="font-semibold">{recipe.nutrition.cholesterol}</span>
+            <span className="font-semibold">{recipe.nutrition?.cholesterol}</span>
           </div>
 
         </div>

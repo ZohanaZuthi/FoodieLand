@@ -5,9 +5,7 @@ from .models import (
 )
 
 
-# --------------------------
-# SIMPLE SERIALIZERS
-# --------------------------
+
 
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:

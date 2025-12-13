@@ -12,7 +12,7 @@ export default function BigRecipeCard({ recipe }) {
   const navigate = useNavigate();
 
   const handleViewRecipe = () => {
-    navigate(`/recipe/${recipe.slug}`);  // uses slug from backend
+    navigate(`/recipe/${recipe.slug}`);  
   };
 
   return (
@@ -23,15 +23,15 @@ export default function BigRecipeCard({ recipe }) {
       rounded-3xl overflow-hidden flex bg-[#E7FAFE]"
     >
 
-      {/* Center Badge */}
+      
       <div className="absolute left-1/2 -translate-x-1/2 top-8 md:top-10 lg:top-12 z-10">
         <img src={badge} alt="badge" className="w-24 h-24 md:w-40 md:h-36" />
       </div>
 
-      {/* LEFT CONTENT */}
+     
       <div className="w-1/2 h-full py-6 px-6 md:px-10 flex flex-col justify-center space-y-6">
 
-        {/* Hot Tag */}
+      
         {recipe.is_hot && (
           <button className="flex items-center gap-2 bg-white px-2 py-1 rounded-full text-xs md:text-lg w-fit font-semibold">
             <img src={box} alt="" className="w-5 h-5" />
@@ -39,7 +39,7 @@ export default function BigRecipeCard({ recipe }) {
           </button>
         )}
 
-        {/* Title */}
+        
         <h2 className="text-3xl md:text-5xl font-bold leading-tight">
           {recipe.title}
         </h2>
@@ -51,7 +51,7 @@ export default function BigRecipeCard({ recipe }) {
 
       
 
-        {/* Time + Category */}
+       
         <div className="flex gap-4 text-gray-700 text-sm md:text-lg">
           <button className="flex items-center gap-2 bg-gray-300 px-3 py-1 rounded-full">
             <img src={timer} className="w-5 h-5" />
@@ -65,9 +65,9 @@ export default function BigRecipeCard({ recipe }) {
           </button>
         </div>
 
-        {/* Author + View Recipe */}
+    
         <div className="flex justify-between items-center mt-4">
-          {/* Author */}
+       
           <div className="flex items-center">
             <img
               src={recipe.author.avatar}
@@ -79,7 +79,7 @@ export default function BigRecipeCard({ recipe }) {
             </div>
           </div>
 
-          {/* VIEW RECIPE */}
+        
           <button
             onClick={handleViewRecipe}
             className="bg-black text-white flex items-center gap-2 px-6 py-3 rounded-xl text-sm md:text-lg"
@@ -91,7 +91,6 @@ export default function BigRecipeCard({ recipe }) {
 
       </div>
 
-      {/* RIGHT IMAGE */}
       <div className="w-1/2 h-full">
         <img
           src={recipe.image}
