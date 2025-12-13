@@ -29,6 +29,8 @@ CORS_ALLOW_ALL_ORIGINS = True  # DEV ONLY, later you can restrict this
 ALLOWED_HOSTS = ["*"]          # Allows requests from Docker, localhost, etc.
 
 
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
 
 # Application definition
 
@@ -46,11 +48,12 @@ INSTALLED_APPS = [
     # My apps
     'api',
     'recipes',
-
+    
 ]
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',    
+    "corsheaders.middleware.CorsMiddleware",
+    "django.middleware.common.CommonMiddleware",   
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

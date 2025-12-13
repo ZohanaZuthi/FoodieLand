@@ -16,7 +16,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from recipes.api import RecipeListAPI, RecipeDetailAPI, CategoryListAPI
+
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
+    # API routes
+    path("api/recipes/", RecipeListAPI.as_view()),
+    path("api/recipes/<slug:slug>/", RecipeDetailAPI.as_view()),
+    path("api/categories/", CategoryListAPI.as_view()),
 ]
+
+# Add this BELOW urlpatterns
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
