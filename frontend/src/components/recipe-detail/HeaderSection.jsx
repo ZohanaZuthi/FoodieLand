@@ -1,49 +1,37 @@
-import { FaUser, FaDrumstickBite } from "react-icons/fa";
-import { MdOutlineWatchLater, MdOutlineTimer } from "react-icons/md";
-import { FiPrinter } from "react-icons/fi";
-import { IoShareSocialOutline } from "react-icons/io5";
+
+import printIcon from "../../assets/img/print.png";
+import shareIcon from "../../assets/img/share.png";
 
 export default function HeaderSection({ recipe }) {
   return (
-    <div className="w-full mt-6">
+    <div className="w-full mb-10">
+      <h1 className="text-4xl font-bold">{recipe.title}</h1>
 
-      {/* TITLE */}
-      <h1 className="text-4xl font-semibold mb-6">
-        {recipe.title}
-      </h1>
+      <div className="flex flex-wrap items-center gap-4 mt-4 text-sm text-gray-600">
 
-      {/* INFO BAR */}
-      <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6">
-
-        {/* LEFT INFO ROW */}
-        <div className="flex items-center gap-8 flex-wrap">
-        
-          <div className="flex items-center gap-2 text-gray-700 text-sm">
-            <FaUser /> {recipe.author}
-          </div>
-
-          <div className="flex items-center gap-2 text-gray-700 text-sm">
-            <MdOutlineWatchLater /> Prep Time {recipe.prep}
-          </div>
-
-          <div className="flex items-center gap-2 text-gray-700 text-sm">
-            <MdOutlineTimer /> Cook Time {recipe.cook}
-          </div>
-
-          <div className="flex items-center gap-2 text-gray-700 text-sm">
-            <FaDrumstickBite /> {recipe.category}
-          </div>
+        <div className="flex items-center gap-2">
+          <img
+            src={recipe.author.avatar}
+            className="w-8 h-8 rounded-full object-cover"
+          />
+          <span>{recipe.author.name}</span>
         </div>
 
-        {/* RIGHT BUTTONS */}
-        <div className="flex items-center gap-4">
-          <button className="flex items-center gap-2 px-4 py-2 border rounded-full hover:bg-gray-100">
-            <FiPrinter /> Print
-          </button>
+        
+        <span>• {recipe.created_at.slice(0, 10)}</span>
 
-          <button className="flex items-center gap-2 px-4 py-2 border rounded-full hover:bg-gray-100">
-            <IoShareSocialOutline /> Share
-          </button>
+        
+        <span>• Prep time: {recipe.prep_time}</span>
+
+      
+        <span>• Cook time: {recipe.cook_time}</span>
+
+        <span>• {recipe.category_name}</span>
+
+       
+        <div className="flex items-center gap-4 ml-auto">
+          <img src={printIcon} className="w-12 cursor-pointer" />
+          <img src={shareIcon} className="w-12 cursor-pointer" />
         </div>
       </div>
     </div>

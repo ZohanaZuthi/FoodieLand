@@ -2,12 +2,10 @@ import { Routes, Route } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/Home/HomePage";
 import Recipe from "./pages/Recipes/RecipeDetail";
-
-// placeholder pages
-const RecipeList = () => <div className="p-10">Recipes Page</div>;
-const BlogPage = () => <div className="p-10">Blog Page</div>;
-const ContactPage = () => <div className="p-10">Contact Page</div>;
-const AboutPage = () => <div className="p-10">About Us Page</div>;
+import RecipePage from "./pages/Recipes/RecipesPage.jsx";
+import BlogPage from "./pages/Blog/BlogPage";
+import ContactPage from "./pages/Contact/ContactPage";
+import AboutPage from "./pages/About/AboutPage";
 
 export default function App() {
   return (
@@ -16,7 +14,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/recipe/:slug" element={<Recipe />} />
 
-        <Route path="/recipes" element={<RecipeList />} />
+        <Route path="/recipes" element={<RecipePage/>} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/about" element={<AboutPage />} />

@@ -1,65 +1,39 @@
+import playIcon from "../../assets/img/play.png";
+
 export default function HeroSection({ recipe }) {
   return (
-    <div className="w-full mt-10 grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-10">
+    <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-10 mt-6">
 
-      {/* LEFT — RECIPE IMAGE */}
-      <div className="relative w-full rounded-3xl overflow-hidden">
+      {/* LEFT IMAGE */}
+      <div className="relative rounded-3xl overflow-hidden">
         <img
           src={recipe.image}
-          alt={recipe.title}
-          className="w-full h-[450px] md:h-[520px] lg:h-[560px] object-cover"
+          className="w-full h-[500px] object-cover"
         />
 
-        {/* PLAY BUTTON */}
-        <button
-          className="
-            absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
-            bg-white/90 backdrop-blur-sm rounded-full
-            w-20 h-20 flex items-center justify-center shadow-lg
-          "
-        >
-          <img src="/src/assets/img/play.png" className="w-10 h-10" />
+        <button className="absolute top-1/2 left-1/2 
+          -translate-x-1/2 -translate-y-1/2 
+          bg-white w-20 h-20 rounded-full shadow-md flex items-center justify-center">
+          <img src={playIcon} className="w-10" />
         </button>
       </div>
 
-      {/* RIGHT — NUTRITION BOX */}
-      <div className="bg-[#E7F9FD] rounded-3xl p-8 h-fit">
+      {/* RIGHT NUTRITION BOX */}
+      <div className="bg-[#E7F9FD] rounded-3xl p-8">
         <h3 className="text-xl font-semibold mb-6">Nutrition Information</h3>
 
-        <div className="flex flex-col gap-4 text-sm">
-
-          <div className="flex justify-between">
-            <span className="text-gray-600">Calories</span>
-            <span className="font-semibold">{recipe.nutrition?.calories}</span>
-          </div>
-
-          <div className="flex justify-between">
-            <span className="text-gray-600">Total Fat</span>
-            <span className="font-semibold">{recipe.nutrition?.total_fat}</span>
-          </div>
-
-          <div className="flex justify-between">
-            <span className="text-gray-600">Protein</span>
-            <span className="font-semibold">{recipe.nutrition?.protein}</span>
-          </div>
-
-          <div className="flex justify-between">
-            <span className="text-gray-600">Carbohydrate</span>
-            <span className="font-semibold">{recipe.nutrition?.carbs}</span>
-          </div>
-
-          <div className="flex justify-between">
-            <span className="text-gray-600">Cholesterol</span>
-            <span className="font-semibold">{recipe.nutrition?.cholesterol}</span>
-          </div>
-
+        <div className="text-sm space-y-4">
+          <div className="flex justify-between"><span>Calories</span><b>{recipe.nutrition?.calories}</b></div>
+          <div className="flex justify-between"><span>Total Fat</span><b>{recipe.nutrition?.total_fat}</b></div>
+          <div className="flex justify-between"><span>Protein</span><b>{recipe.nutrition?.protein}</b></div>
+          <div className="flex justify-between"><span>Carbs</span><b>{recipe.nutrition?.carbs}</b></div>
+          <div className="flex justify-between"><span>Cholesterol</span><b>{recipe.nutrition?.cholesterol}</b></div>
         </div>
 
-        <p className="text-xs text-gray-500 mt-6 leading-relaxed">
-          adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        <p className="text-xs text-gray-500 mt-4">
+          adipiscing elit, sed do eiusmod tempor incididunt ut labore...
         </p>
       </div>
-
     </div>
   );
 }
