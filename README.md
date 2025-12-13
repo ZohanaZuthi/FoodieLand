@@ -3,6 +3,8 @@
 A modern full-stack recipe platform built with **React + Tailwind (frontend)** and **Django REST Framework (backend)**.
 Foodieland allows users to browse recipes, search, explore categories, read blogs, and contact the team — all while storing data in a structured backend.
 
+# Demo Video of FoodieLand
+Link : https://github.com/ZohanaZuthi/Demo_video_FoodieLand
 ---
 
 ## 📌 **Features**
