@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from recipes.api import RecipeListAPI, RecipeDetailAPI, CategoryListAPI
+from recipes.api import (RecipeListAPI, RecipeDetailAPI, CategoryListAPI,RecipeCreateAPI,RecipeUpdateAPI,RecipeDeleteAPI)
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -25,9 +25,15 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # API routes
+    # CRUD routes
     path("api/recipes/", RecipeListAPI.as_view()),
-    path("api/recipes/<slug:slug>/", RecipeDetailAPI.as_view()),
     path("api/categories/", CategoryListAPI.as_view()),
+ 
+    path("api/recipes/create/", RecipeCreateAPI.as_view()),
+    path("api/recipes/<slug:slug>/", RecipeDetailAPI.as_view()),
+    path("api/recipes/<slug:slug>/update/", RecipeUpdateAPI.as_view()),
+    path("api/recipes/<slug:slug>/delete/", RecipeDeleteAPI.as_view()),
+
 ]
 
 # Add this BELOW urlpatterns

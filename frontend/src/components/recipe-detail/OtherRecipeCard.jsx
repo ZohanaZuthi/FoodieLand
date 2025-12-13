@@ -1,12 +1,13 @@
 import HeaderSection from "../../components/recipe-detail/HeaderSection";
 import HeroSection from "../../components/recipe-detail/HeroSection";
-// import IngredientsSection from "../../components/recipe-detail/IngredientsSection";
-// import DirectionsSection from "../../components/recipe-detail/DirectionsSection";
-import NewsletterSection from "../../components/layout/NewsletterSection";
+import IngredientsSection from "../../components/recipe-detail/IngredientsSection";
+import DirectionsSection from "../../components/recipe-detail/DirectionsSection";
+import NewsletterSection from "../../components/newsletter/NewsletterSection";
 import SmallRecipeCard from "../../components/recipes/RecipeCard";
 
 export default function RecipeDetail() {
 
+  // ❗ later this will come from backend (Django)
   const recipe = {
     title: "Health Japanese Fried Rice",
     author: "John Smith",
@@ -15,19 +16,9 @@ export default function RecipeDetail() {
     cook: "15 Minutes",
     category: "Chicken",
     image: "/src/assets/img/featured-recipe.jpg",
-
-    nutrition: {
-      calories: "219.9 kcal",
-      totalFat: "10.7 g",
-      protein: "7.9 g",
-      carbs: "22.3 g",
-      cholesterol: "37.4 mg"
-    },
-
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit..."
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   };
-
 
   return (
     <div className="max-w-6xl mx-auto px-6 py-10">
@@ -40,9 +31,9 @@ export default function RecipeDetail() {
         {recipe.description}
       </p>
 
-      {/* <IngredientsSection /> */}
+      <IngredientsSection />
 
-      {/* <DirectionsSection /> */}
+      <DirectionsSection />
 
       <NewsletterSection />
 

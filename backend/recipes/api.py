@@ -7,9 +7,6 @@ from .models import Recipe, Category
 from .serializers import RecipeSerializer, CategorySerializer
 
 
-# ----------------------------------------------------
-# BASIC GET APIs
-# ----------------------------------------------------
 
 class RecipeListAPI(ListAPIView):
     queryset = Recipe.objects.all().order_by("-created_at")
@@ -27,9 +24,7 @@ class CategoryListAPI(ListAPIView):
     serializer_class = CategorySerializer
 
 
-# ----------------------------------------------------
-# FULL CRUD APIs
-# ----------------------------------------------------
+
 
 class RecipeCreateAPI(CreateAPIView):
     queryset = Recipe.objects.all()

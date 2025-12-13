@@ -51,7 +51,8 @@ class InstructionSerializer(serializers.ModelSerializer):
 
 
 class RecipeSerializer(serializers.ModelSerializer):
-
+    author = AuthorSerializer()         
+    category = CategorySerializer()  
     nutrition = NutritionSerializer()
     ingredient_groups = IngredientGroupSerializer(many=True)
     instructions = InstructionSerializer(many=True)
